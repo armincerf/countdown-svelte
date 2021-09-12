@@ -3,12 +3,12 @@
   "version": "0.0.1",
   "scripts": {
     "dev:watch": "svelte-kit dev",
-    "build:build": "svelte-kit build",
     "preview": "svelte-kit preview",
     "sass:watch": "sass src/styles/tailwind.scss target/css/styles.css --watch",
     "sass:build": "sass src/styles/tailwind.scss target/css/styles.css",
     "tailwind:watch": "cross-env TAILWIND_MODE=watch cross-env NODE_ENV=development postcss target/css/styles.css -o target/css/tailwind-output.css --verbose -w",
     "tailwind:build": "cross-env TAILWIND_MODE=build cross-env NODE_ENV=production postcss target/css/styles.css -o target/css/tailwind-output.css",
+    "build:build": "svelte-kit build",
     "dev": "run-p -l *:watch",
     "build": "run-s *:build",
     "check": "svelte-check --tsconfig ./tsconfig.json",
