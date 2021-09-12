@@ -28,15 +28,20 @@
     "prettier": "~2.2.1",
     "prettier-plugin-svelte": "^2.2.0",
     "svelte": "^3.34.0",
+    "cross-env": "^7.0.3",
+    "autoprefixer": "^10.3.3",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.2.9",
     "svelte-check": "^2.0.0",
     "@sveltejs/adapter-vercel": "next",
+    "sass": "^1.39.2",
     "svelte-preprocess": "^4.0.0",
     "tslib": "^2.0.0",
     "typescript": "^4.0.0"
   },
   "type": "module",
   "dependencies": {
-    "sass": "^1.39.2",
     "trie-prefix-tree": "^1.5.1"
   }
 }
