@@ -97,3 +97,7 @@ export function drawClock(
   ctx.fill();
   ctx.stroke();
 }
+
+export const lookupWord = async (word: string) => {
+  return fetch(`/anagrams/${word}`).then((res) => res.json());
+};

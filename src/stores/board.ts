@@ -1,3 +1,4 @@
+import { lookupWord } from "../helpers";
 import { derived, writable } from "svelte/store";
 
 export const LETTERS_COUNT = 9;
@@ -81,11 +82,16 @@ export const addLetter = (isVowel: boolean) => {
   board.update((board) => {
     const length = board.length;
     const filteredBoard = board.filter((letter) => isLetter(letter));
-    return [
+    const realLength = filteredBoard.length;
+    const newBoard = [
       ...filteredBoard,
       getLetter(letters),
-      ...Array(length - filteredBoard.length - 1).fill(""),
+      ...Array(length - realLength - 1).fill(""),
     ];
+    if (realLength + 1 === LETTERS_COUNT) {
+      lookupWord(newBoard.join(""));
+    }
+    return newBoard;
   });
 };
 

@@ -1,12 +1,11 @@
 <script lang="ts">
   import { dev } from "$app/env";
+import { lookupWord } from "../helpers";
   import { boardWord, board } from "../stores/board";
 
   let word = "";
   let answers: string[] = [];
-  const lookupWord = async (word: string) => {
-    return fetch(`/anagrams/${word}`).then((res) => res.json());
-  };
+  
   const checkWord = async () => {
     if (word.length < 3) {
       answers = ["Word must be at least 3 letters long"];

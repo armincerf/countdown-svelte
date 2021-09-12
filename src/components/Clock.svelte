@@ -14,7 +14,9 @@
     function loop() {
       frame = requestAnimationFrame(loop);
       drawClock(ctx, $time, width);
-      !scaled && ctx.scale(pixelRatio, pixelRatio);
+      if (!scaled) {
+        ctx.scale(pixelRatio, pixelRatio);
+      }
       scaled = true;
     }
     return () => {
